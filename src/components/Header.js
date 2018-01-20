@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = props =>
 
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
                             <a className="nav-link" href="/">React Click Game<span className="sr-only">(current)</span></a>
@@ -16,6 +16,7 @@ const Header = props =>
                     </ul>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item navbar-text justify-content-end">
+                            {/* props will go in for the score to be dynamic */}
                             <h4>Current Score: 0 | High Score: 0</h4>
                         </li>
                     </ul>
