@@ -1,10 +1,4 @@
-// will import Header into CardContainer to pass in the state of the score to let Header handle it as props
-import React, { Component } from 'react';
-import Header from './Header';
-import Banner from './Banner';
-import Card from './Cards';
-
-const portraits = [
+[
     {
         "name": "Bowser",
         "image": "https://www.ssbwiki.com/images/thumb/6/68/Bowser_MP10.png/549px-Bowser_MP10.png"
@@ -52,38 +46,6 @@ const portraits = [
     {
         "name": "Yoshi",
         "image": "https://www.ssbwiki.com/images/2/2a/Yoshi_MP10.png"
-    } 
-];
-
-class CardContainer extends Component {
-    state = {
-        currentScore: 0,
-        highScore: 0,
-        cardsClicked: []
-    };
-    
-    
-    
-    
-    handleOnClick = event => {
-        console.log(event.target.name);
     }
-
     
-    
-    
-    
-    
-    render(){
-        return (
-        <div>
-            <Header />
-            <Banner />
-            <Card portraits={portraits}
-            handleOnClick={this.handleOnClick}/>
-        </div>
-        );
-    }
-}
-
-export default CardContainer;
+]
