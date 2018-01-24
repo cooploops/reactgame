@@ -55,40 +55,45 @@ const portraits = [
     } 
 ];
 
+// shuffle array function (Durstenfeld Shuffle w/ es6 syntax)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 class CardContainer extends Component {
-    state = {
-        currentScore: 0,
-        highScore: 0,
-        cardsClicked: []
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            currentScore: 0,
+            highScore: 0,
+            cardsClicked: []
+        }
+    }
     
     
     
     
     handleOnClick = event => {
-        const name = event.target.name;
-        let pastCardsClicked = this.state.cardsClicked;
-        pastCardsClicked.push(name);
-        let prevCurrScore = this.state.currentScore;
-        let prevHighScore = this.state.highScore;
-        console.log(typeof pastCardsClicked);
-        console.log(name);
-        console.log(`past cards clicked ${typeof pastCardsClicked}`)
-        console.log(`prev curr score ${prevCurrScore}`)
-        console.log(`prev high score ${prevHighScore}`)
+        const clickedName = event.target.name;
+        let match = this.state.cardsClicked.filter(champName => {return champName === clickedName})
+        console.log(match);
 
-        // if(pastCardsClicked.indexOf(name) === -1){
-        //     pastCardsClicked.push(name);
-        //     this.setState({
-        //         cardsClicked: pastCardsClicked,
-        //         currentScore: prevCurrScore++,
-        //         highScore: prevHighScore++
-        //     });
-        // } else {
-        //     this.setState({
-        //         currentScore: prevCurrScore--
-        //     });
-        // }
+        if(match.length > 0){
+            console.log('it exist')
+            this.setState({
+                currentScore: this.state.currentScore - 1
+            })
+        } else {
+            console.log("it doesn't exist")
+            this.setState({
+                currentScore: this.state.currentScore + 1,
+                highScore: this.state.highScore + 1,
+                cardsClicked: [...this.state.cardsClicked, clickedName]
+            })
+        }
     }
 
     
@@ -97,6 +102,7 @@ class CardContainer extends Component {
     
     
     render(){
+        shuffleArray(portraits);
         return (
         <div>
             <Header
