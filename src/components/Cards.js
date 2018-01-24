@@ -15,8 +15,8 @@ const styles = {
 const Card = props =>
   <div className="row mx-2">
       {props.portraits.map(champ =>
-        <div className="card mx-auto my-auto" key={champ.name} name={champ.name} style={styles.container}>
-          <img className="card-img-top" 
+        <div className="card m-auto col-3-md" key={champ.name} name={champ.name} style={styles.container}>
+          <img className="card-img-top p-3" 
           style={styles.img} 
           name={champ.name} 
           src={champ.image} 

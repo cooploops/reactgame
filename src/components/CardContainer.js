@@ -66,7 +66,29 @@ class CardContainer extends Component {
     
     
     handleOnClick = event => {
-        console.log(event.target.name);
+        const name = event.target.name;
+        let pastCardsClicked = this.state.cardsClicked;
+        pastCardsClicked.push(name);
+        let prevCurrScore = this.state.currentScore;
+        let prevHighScore = this.state.highScore;
+        console.log(typeof pastCardsClicked);
+        console.log(name);
+        console.log(`past cards clicked ${typeof pastCardsClicked}`)
+        console.log(`prev curr score ${prevCurrScore}`)
+        console.log(`prev high score ${prevHighScore}`)
+
+        // if(pastCardsClicked.indexOf(name) === -1){
+        //     pastCardsClicked.push(name);
+        //     this.setState({
+        //         cardsClicked: pastCardsClicked,
+        //         currentScore: prevCurrScore++,
+        //         highScore: prevHighScore++
+        //     });
+        // } else {
+        //     this.setState({
+        //         currentScore: prevCurrScore--
+        //     });
+        // }
     }
 
     
@@ -77,7 +99,9 @@ class CardContainer extends Component {
     render(){
         return (
         <div>
-            <Header />
+            <Header
+            currentScore={this.state.currentScore}
+            highScore={this.state.highScore}/>
             <Banner />
             <Card portraits={portraits}
             handleOnClick={this.handleOnClick}/>

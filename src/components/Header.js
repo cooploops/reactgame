@@ -17,7 +17,7 @@ const Header = props =>
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item navbar-text justify-content-end">
                             {/* props will go in for the score to be dynamic */}
-                            <h4>Current Score: 0 | High Score: 0</h4>
+                            <h4>Current Score: {props.currentScore} | High Score: {props.highScore}</h4>
                         </li>
                     </ul>
             </nav>
