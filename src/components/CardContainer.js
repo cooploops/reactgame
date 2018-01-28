@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Banner from './Banner';
 import Card from './Cards';
+import Footer from './Footer';
 
 const portraits = [
     {
@@ -111,6 +112,7 @@ class CardContainer extends Component {
             <Banner />
             <Card portraits={portraits}
             handleOnClick={this.handleOnClick}/>
+            <Footer />
         </div>
         );
     }

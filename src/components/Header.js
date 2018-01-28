@@ -10,7 +10,7 @@ const Header = props =>
                     </ul>
                     <ul className="navbar-nav mx-auto">
                         <li className="nav-item navbar-text justify-content-center">
-                            <h4>Click an image to begin</h4>
+                            <h4>Click any Image to begin!</h4>
                         </li>
 
                     </ul>
