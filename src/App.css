@@ -1,28 +1,39 @@
-.App {
-  text-align: center;
+.smallText {
+  color:black;
+  font-family:'Eczar',serif;
+  text-shadow: 0.6px 0.6px 1px white;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.headerText{
+  color: black;
+  text-shadow: 2px 2px 1px white;
+  font-family:'Eczar', serif;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.backgroundImg{
+  background-color:linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,0.5));
+  background-image: url('./components/mario.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom:2px;
 }
 
-.App-title {
-  font-size: 1.5em;
+.cardContainer{
+  width:18rem;
+  height:15rem;
+  background:rgba(0,0,0,0.6);
 }
 
-.App-intro {
-  font-size: large;
+.imgContainer{
+  width:100%;
+  height:100%;
+  overflow:hidden;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.backgroundStage{
+  background-image:url('./components/superSmashStage.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
